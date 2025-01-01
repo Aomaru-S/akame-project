@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    volumes:
+      - ../..:/workspaces:cached
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+      - type: volume
+        source: bash-history
+        target: /commandhistory
+    entrypoint: sleep infinity
+
+volumes:
+  bash-history:

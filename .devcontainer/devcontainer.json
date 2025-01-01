@@ -1,0 +1,13 @@
+{
+	"name": "AKAME PROJECT",
+
+	"dockerComposeFile": "compose.yaml",
+	"service": "app",
+
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"remoteEnv": {
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+	},
+
+	"postCreateCommand": "sh .devcontainer/postCreateCommand.sh"
+}
